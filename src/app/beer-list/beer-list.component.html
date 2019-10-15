@@ -1,0 +1,25 @@
+<div class="beerList">
+    <h1 class="tableTitle">Beer List</h1>
+    <table mat-table [dataSource]="beerList" class="mat-elevation-z8">
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- NAME -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let beer"> {{ beer.name }} </td>
+        </ng-container>
+
+        <!-- TAGLINE -->
+        <ng-container matColumnDef="tagline">
+            <th mat-header-cell *matHeaderCellDef> Tagline </th>
+            <td mat-cell *matCellDef="let beer"> {{ beer.tagline }} </td>
+        </ng-container>
+
+        <!-- FIRST BREWED -->
+        <ng-container matColumnDef="first_brewed">
+            <th mat-header-cell *matHeaderCellDef> First Brewed </th>
+            <td mat-cell *matCellDef="let beer"> {{ beer.first_brewed }} </td>
+        </ng-container>
+    </table>
+</div>
