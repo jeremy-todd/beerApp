@@ -1,0 +1,55 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <div class="form-group">
+            <label for="inputRegisterFirst">First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" id="inputRegisterFirst" placeholder="First Name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">
+                    First Name is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegisterLast">Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" id="inputRegisterLast" placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">
+                    Last Name is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegisterEmail">Email Address</label>
+            <input type="email" formControlName="emailAddress" class="form-control" id="inputRegisterEmail" placeholder="Email Address" [ngClass]="{ 'is-invalid': submitted && f.emailAddress.errors }" />
+            <div *ngIf="submitted && f.emailAddress.errors" class="invalid-feedback">
+                <div *ngIf="f.emailAddress.errors.required">
+                    Email Address is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegisterPassword">Password</label>
+            <input type="password" formControlName="password" class="form-control" id="inputRegisterPassword" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">
+                    Password is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputRegisterPasswordRepeat">Repeat Password</label>
+            <input type="password" formControlName="passowrdRepeat" class="form-control" id="inputRegisterPasswordRepeat" placeholder="Repeat Password" [ngClass]="{ 'is-invalid': submitted && f.passwordRepeat.errors }" />
+            <div *ngIf="submitted && f.passwordRepeat.errors" class="invalid-feedback">
+                <div *ngIf="f.passwordRepeat.errors.required">
+                    Repeat Password is required
+                </div>
+            </div>
+        </div>
+        <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-link">Cancel</button>
+        </div>
+    </div>
+  </form>
